@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Makes the website responsive on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>To-Do List App</title>
+
+    <!-- Connect CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="todo-container">
+
+        <!-- Header -->
+        <header class="todo-header">
+            <h1>My To-Do List</h1>
+            <p>Organize your tasks and get things done.</p>
+        </header>
+
+        <!-- Add Task Section -->
+        <section class="task-input-section">
+            <label for="taskInput" class="sr-only">
+                Enter a new task
+            </label>
+
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="Enter a new task..."
+                autocomplete="off"
+            >
+
+            <button id="addTaskBtn" type="button">
+                Add Task
+            </button>
+        </section>
+
+        <!-- Task Statistics -->
+        <section class="statistics" aria-label="Task statistics">
+
+            <div class="stat-box">
+                <span class="stat-number" id="totalTasks">0</span>
+                <span class="stat-label">Total</span>
+            </div>
+
+            <div class="stat-box">
+                <span class="stat-number" id="completedTasks">0</span>
+                <span class="stat-label">Completed</span>
+            </div>
+
+            <div class="stat-box">
+                <span class="stat-number" id="remainingTasks">0</span>
+                <span class="stat-label">Remaining</span>
+            </div>
+
+        </section>
+
+        <!-- Task Controls -->
+        <section class="task-controls">
+
+            <button id="completeAllBtn" type="button">
+                Complete All
+            </button>
+
+            <button id="clearCompletedBtn" type="button">
+                Clear Completed
+            </button>
+
+        </section>
+
+        <!-- Task List -->
+        <section class="task-section">
+
+            <h2>Your Tasks</h2>
+
+            <ul id="taskList" class="task-list">
+                <!-- Tasks will be added here using JavaScript -->
+            </ul>
+
+            <!-- Message shown when there are no tasks -->
+            <p id="emptyMessage" class="empty-message">
+                No tasks yet. Add your first task!
+            </p>
+
+        </section>
+
+    </main>
+
+    <!-- Connect JavaScript file -->
+    <script src="script.js"></script>
+
+</body>
+</html>

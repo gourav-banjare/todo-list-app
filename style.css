@@ -1,0 +1,442 @@
+/* ==============================
+   General Reset
+   ============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ==============================
+   Body
+   ============================== */
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #222;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 40px 20px;
+}
+
+
+/* ==============================
+   Main Container
+   ============================== */
+
+.todo-container {
+    width: 100%;
+    max-width: 750px;
+
+    background: #ffffff;
+
+    border-radius: 16px;
+
+    padding: 30px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ==============================
+   Header
+   ============================== */
+
+.todo-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.todo-header h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.todo-header p {
+    color: #777;
+    font-size: 15px;
+}
+
+
+/* ==============================
+   Screen Reader Only
+   ============================== */
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+
+/* ==============================
+   Input Section
+   ============================== */
+
+.task-input-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+#taskInput {
+    flex: 1;
+
+    padding: 13px 15px;
+
+    border: 1px solid #d5dbe3;
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#taskInput:focus {
+    border-color: #4f7cff;
+
+    box-shadow: 0 0 0 3px rgba(79, 124, 255, 0.12);
+}
+
+
+/* ==============================
+   General Buttons
+   ============================== */
+
+button {
+    border: none;
+    cursor: pointer;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition:
+        transform 0.2s,
+        opacity 0.2s,
+        background-color 0.2s;
+}
+
+button:hover {
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+
+/* ==============================
+   Add Button
+   ============================== */
+
+#addTaskBtn {
+    padding: 0 22px;
+
+    background: #4f7cff;
+    color: white;
+}
+
+#addTaskBtn:hover {
+    background: #3d6bea;
+}
+
+
+/* ==============================
+   Statistics
+   ============================== */
+
+.statistics {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+.stat-box {
+    background: #f7f9fc;
+
+    border-radius: 10px;
+
+    padding: 15px;
+
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    margin-bottom: 4px;
+}
+
+.stat-label {
+    color: #777;
+    font-size: 13px;
+}
+
+
+/* ==============================
+   Task Controls
+   ============================== */
+
+.task-controls {
+    display: flex;
+    gap: 10px;
+
+    margin-bottom: 25px;
+}
+
+.task-controls button {
+    padding: 10px 14px;
+
+    background: #eef2f7;
+
+    color: #333;
+}
+
+.task-controls button:hover {
+    background: #e2e7ee;
+}
+
+
+/* ==============================
+   Task Section
+   ============================== */
+
+.task-section h2 {
+    font-size: 20px;
+
+    margin-bottom: 15px;
+}
+
+
+/* ==============================
+   Task List
+   ============================== */
+
+.task-list {
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+/* ==============================
+   Individual Task
+   ============================== */
+
+.task-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 13px 14px;
+
+    background: #fafbfc;
+
+    border: 1px solid #e5e9ef;
+
+    border-radius: 10px;
+
+    transition:
+        background-color 0.2s,
+        transform 0.2s,
+        border-color 0.2s;
+}
+
+.task-item:hover {
+    background: #f5f8fc;
+
+    border-color: #d7dde6;
+
+    transform: translateY(-1px);
+}
+
+
+/* ==============================
+   Complete Button
+   ============================== */
+
+.complete-btn {
+    width: 28px;
+    height: 28px;
+
+    flex-shrink: 0;
+
+    border: 2px solid #b9c1cc;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: transparent;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.complete-btn:hover {
+    border-color: #27ae60;
+}
+
+
+/* Green tick for completed task */
+
+.task-item.completed .complete-btn {
+    background: #27ae60;
+
+    border-color: #27ae60;
+
+    color: white;
+}
+
+
+/* ==============================
+   Task Text
+   ============================== */
+
+.task-text {
+    flex: 1;
+
+    word-break: break-word;
+
+    font-size: 15px;
+
+    transition: color 0.2s;
+}
+
+
+/* Completed task style */
+
+.task-item.completed .task-text {
+    text-decoration: line-through;
+
+    color: #777;
+}
+
+
+/* ==============================
+   Delete Button
+   ============================== */
+
+.delete-btn {
+    padding: 8px 11px;
+
+    background: #ffe9e9;
+
+    color: #d63031;
+
+    flex-shrink: 0;
+}
+
+.delete-btn:hover {
+    background: #ffd8d8;
+}
+
+
+/* ==============================
+   Empty Message
+   ============================== */
+
+.empty-message {
+    text-align: center;
+
+    color: #888;
+
+    padding: 25px 10px;
+
+    font-size: 14px;
+}
+
+
+/* ==============================
+   Mobile Responsive Design
+   ============================== */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px 12px;
+    }
+
+    .todo-container {
+        padding: 20px 15px;
+
+        border-radius: 12px;
+    }
+
+    .todo-header h1 {
+        font-size: 26px;
+    }
+
+    .task-input-section {
+        flex-direction: column;
+    }
+
+    #taskInput {
+        width: 100%;
+    }
+
+    #addTaskBtn {
+        padding: 12px;
+    }
+
+    .statistics {
+        gap: 8px;
+    }
+
+    .stat-box {
+        padding: 12px 5px;
+    }
+
+    .stat-number {
+        font-size: 20px;
+    }
+
+    .task-controls {
+        flex-direction: column;
+    }
+
+    .task-controls button {
+        width: 100%;
+    }
+
+    .task-item {
+        padding: 11px;
+    }
+
+    .delete-btn {
+        padding: 7px 9px;
+    }
+}
